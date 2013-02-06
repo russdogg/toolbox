@@ -4,9 +4,16 @@ Russdesigns Toolbox » Version 0.1
 This is my first attempt at putting together a javascript toolkit all in one place.
 
 
-Some sample code:
+Email validation:
+-----------------
 
-        ['a', 'b'].map { |x| x.uppercase }
+	function checkMail(email){
+	var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		if (filter.test(email)) {
+		return true;
+		}
+		return false;
+	}    
 
 For example, you can do a shortcut:
 
