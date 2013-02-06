@@ -15,9 +15,18 @@ Email validation:
 		return false;
 	}    
 
-For example, you can do a shortcut:
+iPhone style orientation change detection:
+------------------------------------------
 
-        ['a', 'b'].map(&:uppercase)
+	window.addEventListener('load', setOrientation, false);
+	window.addEventListener('orientationchange', setOrientation, false);
+	
+	function setOrientation() {
+		var orient = Math.abs(window.orientation) === 90 ? 'landscape' : 'portrait';
+		var cl = document.body.className;
+		cl = cl.replace(/portrait|landscape/, orient);
+		document.body.className = cl;
+	}
 
 Some people seem to like definition lists
 
